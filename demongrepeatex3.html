@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.toc=[
+                {Title:'Jquery',Description:'Jquery is a Library'},
+                {Title:'Angular JS',Description:'Angular js is a Framework'}
+            ];
+        });
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<dl>
+    <div ng-repeat="item in toc">
+        <dt>{{item.Title}}</dt>
+        <dd>{{item.Description}}</dd>
+    </div>
+</dl>
+</body>
+</html>

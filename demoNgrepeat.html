@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<div ng-init="products=[{Id:3,Name:'Laptop'},{Id:2,Name:'Samsung Tv'},{Id:1,Name:'Shoe'}]"></div>
+<table align="center" width="400" border="1">
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+    </tr>
+    <tr ng-repeat="product in products">
+    <td>{{product.Id}}</td>
+    <td>{{product.Name}}</td>
+    </tr>
+</table>
+</body>
+</html>

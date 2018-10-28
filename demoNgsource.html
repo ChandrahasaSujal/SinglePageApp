@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller ('HomeController',function ($scope) {
+            $scope.img="Images/3.jpg";
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<img ng-src="{{img}}" height="100" />
+</body>
+</html>

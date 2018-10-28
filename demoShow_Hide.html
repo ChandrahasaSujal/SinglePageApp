@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<form name="frmHome">
+    Enter User Name:
+    <input type="text" name="txtName" required ng-model="txtName">
+    <span ng-hide="frmHome.txtName.$valid">User Name Required</span>
+</form>
+</body>
+</html>

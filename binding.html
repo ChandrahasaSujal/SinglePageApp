@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binding Demo</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-sanitize.js"></script>
+    <script>
+        var app=angular.module('DemoApp',['ngSanitize']);
+        </script>
+</head>
+<body ng-app="DemoApp">
+<dl>
+    <dt>Enter Comments</dt>
+    <dd><input type="text" ng-model="comments"></dd>
+</dl>
+<hr />
+comments here:
+<div ng-bind-html="comments"></div>
+</body>
+</html>

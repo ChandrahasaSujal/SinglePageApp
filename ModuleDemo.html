@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module Demo</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app= angular.module('DemoApp',[]);
+        app.controller('HomeController',function($scope){
+            $scope.x="hi";
+        });
+    </script>
+</head>
+<body  ng-app="DemoApp" ng-controller="HomeController">
+Value is :{{x}}
+</body>
+</html>

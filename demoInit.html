@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<div ng-init="count=0" height="200" ng-click="count=count+1" border="2" style="background-color: yellow">
+The value of count is {{count}}
+</div>
+<input type="text" ng-init="txtName='David'" ng-model="txtName"  >
+Hello! {{txtName}}, How are you?
+</body>
+</html>

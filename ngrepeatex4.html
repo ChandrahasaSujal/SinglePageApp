@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.products=[
+                {name:'Samsung TV',price:45628.25,photo:'Images/tv.jpg'},
+                    {name:'Nike',price:4565.26,photo:'Images/shoe.jpg'}
+                ];
+        });
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<table border="1" width="700" align="center">
+    <tr ng-repeat="item in products">
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td><img ng-src="{{item.photo}}" width="50" height="50" /></td>
+    </tr>
+</table><br />
+<table border="1" align="center" width="700">
+    <tr ng-repeat="item in products">
+        <td width="60"><img ng-src="{{item.photo}}" width="200" height="200"></td>
+        <td>
+            <table frame="box" rules="all">
+                <tr>
+                    <th>Product Name</th>
+                    <th>product Price</th>
+                </tr>
+                <tr ng-repeat="item in products">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

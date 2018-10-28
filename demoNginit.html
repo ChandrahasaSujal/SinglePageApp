@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+    <style>
+        dt
+        {
+            font-weight: bold;font-size:35px
+        }
+    </style>
+</head>
+<body ng-app>
+<dt>Intilizing number</dt>
+<dd ng-include="count=0"></dd>
+    you have clicked:{{count}}
+<br />
+<dt>Intilizing String</dt>
+<dd ng-init="name='David'"></dd>
+ Hello! {{name}}, Nice to meet you<br />
+<dt> Intilizing Array</dt>
+<dd ng-init="cities=['Hyd','Mum']"></dd>
+Shipped to {{cities[1]}}
+<dt>Intilizing Objects</dt>
+<dd ng-init="product={Id:1,Name:'Samsung TV'}"></dd>
+product Id:{{products.Id}}<br>
+product Name:{{product.Name}}
+<dt>Intilizing JSON types</dt>
+<dd ng-init="products=[{Id:1,Name:'Samsung TV'},{Id:2,Name:'Shoe'},{Id:3,Name:'Camera'}]"></dd>
+product Id:{{products[2].Id}}<br>
+Products Name:{{products[2].Name}}
+
+<dt>The default value for text box</dt>
+<dd ng-init="txtName='Ramu'"></dd>
+<input type="text" ng-model="txtName">
+Hello! {{txtName}}, Nice to meet you!
+</body>
+</html>
