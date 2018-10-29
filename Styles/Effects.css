@@ -1,0 +1,10 @@
+.backEffects{
+    background-color: #2a6496;
+}
+.textEffects{
+    color: #78FA89;
+    text-align: center;
+}
+.borderEffects{
+    border-style: dot-dash;
+}
