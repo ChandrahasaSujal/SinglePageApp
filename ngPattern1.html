@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<form name="frmHome">
+    Enter Password:<input type="text" name="txtPwd" ng-model="txtPwd" ng-pattern="/(?=.*[A-Z])\w {4,8}/" >
+    <div ng-if="frmHome.txtPwd.$invalid">
+        password between 4 to 8 with ablest one capital letter.
+    </div>
+</form>
+</body>
+</html>

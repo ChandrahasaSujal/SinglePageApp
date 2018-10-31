@@ -7,7 +7,8 @@
 </head>
 <body ng-app>
 <img ng-init="pic='Images/1.jpg'" width="300" height="100" ng-mouseover="pic='Images/2.jpg'" ng-mouseleave="pic='Images/1.jpg'" ng-src="{{pic}}">
-<h2 align="center">put mouse pointer on the Image to see effects</h2>
-<img ng-init>
+<h3 align="center">put mouse pointer on the Image to see effects</h3>
+<img ng-init="pic1='Images/Bulboff.png'" ng-mousedown="pic1='Images/Bulbon.png'" ng-mouseup="pic1='Images/Bulboff.png'" ng-src="{{pic1}}">
+<h3 align="center">Click on the above image to see effects</h3>
 </body>
 </html>

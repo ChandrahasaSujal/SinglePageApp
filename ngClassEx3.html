@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="Styles/Effects.css">
 </head>
 <body ng-app>
-<input type="text" placeholder="eg:backEffects,textEffects,borderEffects" ng-model="applyStyle">
-<h2 ng-class="{backEffects:}">Hello! Welcome to Angular JS</h2>
+<fieldset>
+    <legend>Enter Effects as given in textbox</legend>
+<input type="text" size="50" placeholder="eg:backEffects,textEffects,borderEffects" ng-model="txtEffects">
+</fieldset><br />
+<h2 ng-class="txtEffects">Hello! Welcome to Angular JS</h2>
 </body>
 </html>

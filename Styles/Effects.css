@@ -6,5 +6,13 @@
     text-align: center;
 }
 .borderEffects{
-    border-style: dot-dash;
+    border: dashed #2b542c;
+}
+.odd{
+    background-color:darkcyan;
+    color: white;
+}
+.even{
+    background-color: darkgreen;
+    color: white;
 }

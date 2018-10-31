@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+    <link rel="stylesheet" href="Styles/Effects.css">
+</head>
+<body ng-app>
+<fieldset>
+    <legend>Select Effects to Apply</legend>
+    <ul>
+        <li><input type="checkbox" ng-model="back"/> Back Ground</li><br>
+        <li><input type="checkbox" ng-model="align"/> Text Align</li><br>
+        <li><input type="checkbox" ng-model="border"/> Border</li><br>
+    </ul>
+</fieldset>
+<h2 ng-class="{backEffects:back,textEffects:align,borderEffects:border}">Welcome to Angular Js</h2>
+</body>
+</html>

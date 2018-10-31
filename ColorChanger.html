@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-mousemove</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.StyleObj="";
+            $scope.x="";
+            $scope.ChangeColor1=function (event) {
+                $scope.x=event.clientX;
+                if($scope.x>=12 && $scope.x<=144)
+                {
+                    $scope.StyleObj={
+                        "color":"red"
+                    }
+                }
+                else if($scope.x>144 &&  $scope.x<379)
+                {
+                    $scope.StyleObj={
+                        "color":"green"
+                    }
+                }
+                else if($scope.x>379 && $scope.x<=590)
+                {
+                    $scope.StyleObj={
+                        "color":"blue"
+                    }
+                }
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<img ng-src="Images/Color.jpg" ng-mousemove="ChangeColor1($event)">
+<h2 ng-style="StyleObj">Welcome to Angular JS</h2>
+</body>
+</html>
