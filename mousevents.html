@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<img ng-init="pic='Images/1.jpg'" width="300" height="100" ng-mouseover="pic='Images/2.jpg'" ng-mouseleave="pic='Images/1.jpg'" ng-src="{{pic}}">
+<h2 align="center">put mouse pointer on the Image to see effects</h2>
+<img ng-init>
+</body>
+</html>
