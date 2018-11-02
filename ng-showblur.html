@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-show blur</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.msg="";
+            $scope.showTip=function () {
+                $scope.msg="Enter in Block letters.";
+            }
+            $scope.caps=function () {
+                $scope.txtName=$scope.txtName.toUpperCase();
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<fieldset>
+    <legend>Enter Your Name</legend>
+    <input type="text" ng-model="txtName" ng-focus="showTip()" ng-blur="caps()">
+    <span>{{msg}}</span>
+</fieldset>
+</body>
+</html>

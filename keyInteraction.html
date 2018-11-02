@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Interaction</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.userNames=[
+                {user:'chandu'},
+                {user:'chandu_it'},
+                {user:'chandu1'},
+                {user:'chandu45'},
+                ];
+
+            $scope.txtName="";
+            $scope.msg="";
+            $scope.verifyName=function () {
+            for(var i=0;i<=$scope.userNames.length;i++)
+            {
+              if($scope.userNames[i].user==$scope.txtName)
+               {
+                   $scope.msg="User Name is not available";
+                }
+                else {
+                    $scope.msg="Availabe";
+                }
+            }
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<fieldset>
+    <legend>User Name</legend>
+    <input type="text" ng-model="txtName" ng-keyup="verifyName()">
+    <span>{{msg}}</span>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-form</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<form name="frmHome">
+<h2>Home</h2>
+    <input type="checkbox" ng-model="search">Search Site
+    <dialog ng-open="search">
+        <fieldset>
+            <legend>Search</legend>
+            <input type="text" ng-model="txtSearch" name="txtSearch" required>
+            <span ng-if="frmHome.txtSearch.$invalid">Search string required.</span>
+        </fieldset>
+
+    </dialog>
+    <ng-form name="frmLogin">
+        <fieldset>
+            <legend>Login</legend>
+            <input type="text" ng-model="txtName" name="txtName" required>
+            <span ng-if="frmLogin.txtName.$invalid">Name required. </span>
+        </fieldset>
+    </ng-form><br><br>
+    <ng-form name="frmRegister">
+        <fieldset>
+            <legend>Register</legend>
+            <input type="email" ng-model="txtEmail" name="txtEmail"required>
+            <span ng-if="frmRegister.txtEmail.$invalid"> Invalid Email.</span>
+        </fieldset>
+    </ng-form>
+</form>
+</body>
+</html>
