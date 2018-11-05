@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Sort</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app = angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.msg="hello how are you?"
+            $scope.msg1="HELLO HOW ARE YOU?"
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<h1>{{msg|uppercase}}</h1>
+<h1>{{msg1|lowercase}}</h1>
+</body>
+</html>
