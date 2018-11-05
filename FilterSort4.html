@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Sort</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.products=[
+                {Id:1,Name:'Tv',Price:46589.65,Mfd:new Date('2017-08-08')},
+                {Id:2,Name:'Nike Shoe',Price:6589.65,Mfd:new Date('2017-09-09')},
+                {Id:3,Name:'Fan',Price:9589.65,Mfd:new Date('2017-05-05')},
+                {Id:4,Name:'Kite',Price:589.65,Mfd:new Date('2017-06-06')}
+            ];
+            $scope.sort=function (fieldName) {
+                $scope.fieldName=fieldName;
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<table align="center" border="1" width="450">
+    <th ng-click="sort('Id')"><a href=""> Product Id</a></th>
+    <th ng-click="sort('Name')"><a href=""> Name</a></th>
+    <th ng-click="sort('Price')"><a href=""> Price</a></th>
+    <th ng-click="sort('Mfd')"><a href=""> Mfd</a></th>
+    <tr ng-repeat="item in products|orderBy:fieldName">
+        <td>{{item.Id}}</td>
+        <td>{{item.Name |uppercase}}</td>
+        <td>{{item.Price |currency:'&#8377;'}}</td>
+        <td>{{item.Mfd |date}}</td>
+    </tr>
+</table>
+</body>
+</html>

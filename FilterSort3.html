@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Sort</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.products=[
+                {Id:1,Name:'Tv',Price:46589.65,Mfd:new Date('2017-08-08')},
+                {Id:2,Name:'Nike Shoe',Price:6589.65,Mfd:new Date('2017-09-09')},
+                {Id:3,Name:'Fan',Price:9589.65,Mfd:new Date('2017-05-05')},
+                {Id:4,Name:'Kite',Price:589.65,Mfd:new Date('2017-06-06')}
+            ];
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<fieldset>
+    <legend>Select Sorting Method</legend>
+    <select ng-model="sort">
+        <option value="Id">Order By Id</option>
+        <option value="Name">Order By Name</option>
+        <option value="Price">Order By Price</option>
+        <option value="Mfd">Order By Mfd</option>
+    </select>
+    <input type="checkbox" ng-model="reverse">Want in Reverse ?
+</fieldset>
+<table align="center" border="1" width="450">
+    <th>Product Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Mfd</th>
+    <tr ng-repeat="item in products |orderBy:sort:reverse">
+        <td>{{item.Id}}</td>
+        <td>{{item.Name |uppercase}}</td>
+        <td>{{item.Price |currency:'&#8377;'}}</td>
+        <td>{{item.Mfd |date}}</td>
+    </tr>
+</table>
+</body>
+</html>
