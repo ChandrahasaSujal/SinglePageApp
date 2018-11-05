@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number, Date and Currency</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<div ng-init="money=658970">
+    {{money|number}}<br>
+    {{money|number:2}}<br>
+    {{money|currency}}<br>
+    {{money|currency:'Rs':2}}<br>
+
+</div>
+</body>
+</html>
