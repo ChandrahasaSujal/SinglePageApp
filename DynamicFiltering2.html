@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Filtering 2</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<div ng-init="Topics=[
+{Title:'JavaScript Examples',Url:'js.html'},
+{Title:'CSS Examples',Url:'css.html'},
+{Title:'Angular JS Examples',Url:'ng.html'}
+]">
+<table border="1">
+    <tr>
+        <td width="300">
+            <fieldset>
+                <legend>Search Topics</legend>
+                <input type="text" ng-model="search">
+                <ol ng-repeat="topic in Topics|filter:search">
+                    <a href="{{topic.Url}}" target="a"><li>{{topic.Title}}</li></a>
+                </ol>
+            </fieldset>
+        </td>
+        <td width="500">
+            <iframe name="a" frameborder="0"></iframe>
+        </td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Filtering Ex.1 </title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.products=[
+                {Id:1001,Name:'TV',Price:25000,Mfd:new Date('2018-08-09')},
+                {Id:1002,Name:'Mobile',Price:15000,Mfd:new Date('2018-09-25')},
+                {Id:1003,Name:'Book',Price:500,Mfd:new Date('2018-11-06')},
+                {Id:1004,Name:'Pen',Price:25,Mfd:new Date('2018-01-05')}
+            ];
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<fieldset>
+    <legend>Search in All</legend>
+    <input type="text" ng-model="search.$">
+</fieldset>
+<fieldset>
+    <legend>Search in Name</legend>
+    <input type="text" ng-model="search.Name">
+</fieldset>
+<fieldset>
+    <legend>Search in Price</legend>
+    <input type="text" ng-model="search.Price">
+</fieldset>
+<table align="center" border="1">
+    <tr ng-repeat="item in products | filter:search">
+        <td>{{item.Id}}</td>
+        <td>{{item.Name |uppercase}}</td>
+        <td>{{item.Price|currency:'&#8377;':2}}</td>
+        <td>{{item.Mfd | date}}</td>
+    </tr>
+</table>
+</body>
+</html>
