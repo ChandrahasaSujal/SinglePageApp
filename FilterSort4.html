@@ -13,8 +13,11 @@
                 {Id:3,Name:'Fan',Price:9589.65,Mfd:new Date('2017-05-05')},
                 {Id:4,Name:'Kite',Price:589.65,Mfd:new Date('2017-06-06')}
             ];
+            $scope.reverse=false;
+            $scope.fieldName="price";
             $scope.sort=function (fieldName) {
                 $scope.fieldName=fieldName;
+                $scope.reverse=($scope.fieldName===$scope.fieldName)?!$scope.reverse:$scope.reverse;
             }
         })
     </script>
@@ -25,7 +28,7 @@
     <th ng-click="sort('Name')"><a href=""> Name</a></th>
     <th ng-click="sort('Price')"><a href=""> Price</a></th>
     <th ng-click="sort('Mfd')"><a href=""> Mfd</a></th>
-    <tr ng-repeat="item in products|orderBy:fieldName">
+    <tr ng-repeat="item in products|orderBy:fieldName:reverse">
         <td>{{item.Id}}</td>
         <td>{{item.Name |uppercase}}</td>
         <td>{{item.Price |currency:'&#8377;'}}</td>
