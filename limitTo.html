@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>limitTo example</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope) {
+            $scope.products=[
+                {Id:1,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:2,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:3,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:4,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:5,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:6,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:7,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:8,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:9,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:10,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:11,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:12,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')},
+                {Id:13,Name:'Samsung Tv',Price:45589.36,Mfd:new Date('2018-08-06')}
+            ];
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<fieldset>
+    <legend>select How many rows want to see</legend>
+    <input type="number" min="1" max="{{products.length}}" ng-model="pagePerRows" />
+</fieldset>
+<table border="1" align="center">
+    <th>Product Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Manufacturer</th>
+    <tr ng-repeat="item in products | limitTo:pagePerRows">
+        <td>{{item.Id}}</td>
+        <td>{{item.Name |uppercase}}</td>
+        <td>{{item.Price|currency}}</td>
+        <td>{{item.Mfd|date}}</td>
+    </tr>
+</table>
+</body>
+</html>
