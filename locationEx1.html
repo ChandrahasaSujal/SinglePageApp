@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>locatiuon Service</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope,$location) {
+            $scope.hostName=$location.host();
+            $scope.protocol=$location.protocol();
+            $scope.url=$location.absUrl();
+            $scope.portNumber=$location.port();
+            $scope.path=$location.path();
+            $scope.msg="";
+            
+            switch ($scope.protocol) {
+                case "http":
+                    $scope.msg="your are using Webserver.";
+                    break;
+                case "ftp":
+                    $scope.msg="you are using file server, please host it on Webserver.";
+                    break;
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<noscript>
+    Please enable javaScript in your Browser.
+</noscript>
+Host Name: {{hostName}}<br>
+Protocol: {{protocol}}<br>
+Url: {{url}}<br>
+Port Number: {{portNumber}}<br>
+Path : {{path}}<br>
+{{msg}}
+</body>
+</html>

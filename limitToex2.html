@@ -52,5 +52,8 @@
     <button ng-click="prevClick()"> < </button>
     <button ng-click="nextClick()"> > </button>
 </center>
+<div ng-repeat="i in products">
+    {{i | json}}
+</div>
 </body>
 </html>
