@@ -1,0 +1,2 @@
+# SinglePageApp
+Practicing Angular JS
