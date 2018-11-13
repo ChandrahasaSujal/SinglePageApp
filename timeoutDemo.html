@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+       app.controller('HomeController',function ($scope,$interval) {
+            $scope.title="AAA";
+            $scope.pic="Images/1.jpg";
+            $scope.count=0;
+            $scope.msg="";
+            $scope.pics=[
+                {name:'AAA',photo:'Images/1.jpg'},
+                {name:'BBB',photo:'Images/2.jpg'},
+                {name:'CCC',photo:'Images/3.jpg'},
+                {name:'DDD',photo:'Images/4.jpg'},
+                {name:'EEE',photo:'Images/5.png'},
+                {name:'FFF',photo:'Images/6.jpg'},
+                {name:'GGG',photo:'Images/7.jpg'},
+            ];
+
+             function slideShow(){
+                $scope.count=$scope.count+1;
+                $scope.title=$scope.pics[$scope.count].name;
+                $scope.pic=$scope.pics[$scope.count].photo;
+                if($scope.count==$scope.pics.length-1)
+                    $scope.count=-1;
+            }
+
+            $scope.timerStart=function ()
+            {
+                $scope.msg="Slideshow started.";
+                window.timer=$interval(slideShow,2000);
+            }
+            
+            $scope.timerStop=function () {
+                 $scope.msg="Slideshow paused.";
+                $interval.cancel(timer);
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<table align="center" border="2">
+<tr align="center">
+    <td>{{title}}
+    <br>
+        {{msg}}
+    </td>
+</tr>
+    <tr>
+        <td><img ng-src="{{pic}}" width="400" height="300" /></td>
+    </tr>
+    <tr>
+        <td align="center"><button ng-click="timerStart()"><font face="webdings">4</font></button>
+        <button><font face="webdings" ng-click="timerStop()">;</font></button></td>
+    </tr>
+</table>
+</body>
+</html>
