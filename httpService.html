@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP Service</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope,$http) {
+            $scope.details="";
+            $http(
+                {
+                    method:'GET',
+                    url:'demoInit.html'
+                }).then(function onsucess(response) {
+                $scope.details=response;
+            },function onfailure(response) {
+                $scope.details=response;
+            }
+            )
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<div>
+    <pre>
+        {{details | json}}
+    </pre>
+</div>
+</body>
+</html>
