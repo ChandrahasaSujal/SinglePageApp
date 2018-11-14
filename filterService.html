@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter service</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module('DemoApp',[]);
+        app.controller('HomeController',function ($scope,$filter) {
+            $scope.msg="Welcome to Angular JS";
+            $scope.ChangeCase=function () {
+                $scope.msg=$filter('uppercase') ($scope.msg);
+            }
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+{{msg}}<br>
+<button ng-click="ChangeCase()">Change Case</button>
+<button onclick="location.reload()">Reset</button>
+</body>
+</html>
