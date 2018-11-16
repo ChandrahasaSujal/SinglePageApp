@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>routing</title>
+    <style>
+            .titleBorder{
+                background-color: #440044;color: white;
+            }
+    </style>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script>
+        var app=angular.module('DemoApp',['ngRoute']);
+        app.config(function ($routeProvider) {
+            $routeProvider.when('/home',{
+                template:"<h1>Welcome to chandra site</h1>"
+            }).when('/js',{
+                template:"<h1>Java Script</h1><ol><li>Datatypes</li><li>Functions</li></ol>"
+            }).when('/angular',{
+                template:"<h1>Angular JS</h1><ul><li>Directives</li><li>Services</li></ul>"
+            })
+        })
+        app.controller('HomeController',function ($scope) {
+            $scope.title="Chandra Infotech";
+
+        })
+    </script>
+</head>
+<body ng-app="DemoApp" ng-controller="HomeController">
+<table border="1" align="center" width="800">
+<tr align="center">
+    <td colspan="2" class="titleBorder" ng-bind="title"></td>
+</tr>
+    <tr>
+        <td width="25%">
+            <ul>
+                <li><a href="#!home" >Home</a></li>
+                <li><a href="#!js" >Java Script</a></li>
+                <li><a href="#!angular" >Angular Js</a></li>
+            </ul>
+        </td>
+        <td width="60%"><ng-view></ng-view></td>
+    </tr>
+    <tr class="titleBorder  ">
+        <td colspan="2" align="center">Chandra site :&copy;2018</td>
+    </tr>
+</table>
+</body>
+</html>
